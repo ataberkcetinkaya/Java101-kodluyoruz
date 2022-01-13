@@ -4,21 +4,37 @@ public class Main {
 
     public static void main(String[] args) {
         int weather;
+        int status;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("What's the weather u think outside?: ");
         weather = scanner.nextInt();
-
-        if (weather < 5) {
-            System.out.println("Ski time in Uludag");
-        } else if (weather > 5 && weather < 15) {
-            System.out.println("Let's go and watch the new movie");
-        } else if (weather > 15 && weather < 25) {
-            System.out.println("Picnic outside.");
-        } else if (weather > 25 && weather < 40) {
-            System.out.println("Pool time");
+        if (weather <= 5) {
+            status = 0;
+        } else if (weather <= 15 && weather > 5) {
+            status = 1;
+        } else if (weather <= 25 && weather > 15) {
+            status = 2;
         } else {
-            System.out.println("The weather is: " + weather);
+            status = 3;
+        }
+        scanner.close();
+
+        switch (status) {
+            case 0:
+                System.out.println("Ski time");
+                break;
+            case 1:
+                System.out.println("Cinema");
+                break;
+            case 2:
+                System.out.println("Picnic");
+                break;
+            case 3:
+                System.out.println("Swim");
+                break;
+            default:
+                break;
         }
     }
 }
