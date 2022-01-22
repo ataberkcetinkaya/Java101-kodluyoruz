@@ -1,8 +1,10 @@
+import java.io.*;
+import java.util.Scanner;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String username;
         String password;
 
@@ -12,6 +14,15 @@ public class Main {
         int operation;
         int deposit;
         int withdraw;
+
+        //reading from file > contentLine - upgradable
+        BufferedReader br;
+
+        br = new BufferedReader(new FileReader("C:/Users/chpat/Desktop/java_test_vscode/balance.txt"));
+
+        String contentLine = br.readLine();
+        System.out.println(contentLine);
+
 
         while (right > 0) {
             Scanner scanner = new Scanner(System.in);
@@ -30,12 +41,12 @@ public class Main {
                     System.out.println("Select operation: \n 1- Balance Info \n 2- Deposit \n 3- Withdraw \n 4- Exit");
                     operation = scanner.nextInt();
                     if (operation == 1) {
-                        System.out.println(balance);
+                        System.out.println(contentLine);
                     } else if (operation == 2) {
                         System.out.println("Enter amount of deposit: ");
                         deposit = scanner.nextInt();
                         balance += deposit;
-                        System.out.println(balance);
+                        System.out.println(contentLine);
                     } else if (operation == 3) {
                         System.out.println("Enter amount of withdraw: ");
                         withdraw = scanner.nextInt();
@@ -58,5 +69,6 @@ public class Main {
                 }
             }
         }
+        br.close();
     }
 }
