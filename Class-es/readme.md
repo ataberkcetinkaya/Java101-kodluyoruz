@@ -1,1 +1,1 @@
-Class'lara ait part dizin.
+Class'lara ait part/dizin.
