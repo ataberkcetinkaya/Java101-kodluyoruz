@@ -31,14 +31,22 @@ public class Match {
         if (isCheck()) {
             while(this.f1.health > 0 && this.f2.health > 0) { //while > iki fighter icinde can degerleri 0'dan buyuk oldugu surece, herhangi birinin cani 0 oldugunda mac bitecek
 
-                f2.health = f1.hit(f2); //f1 vuracak, f2 rakibi olacak
-                if (isWin()) {
-                    break;
+                double randomNum = Math.random() * 100;
+                //ODEV - ILK KIM VURUSA BASLAYACAK.
+                if (randomNum > 50) {
+                    f2.health = f1.hit(f2); //f1 vuracak, f2 rakibi olacak
+                    f1.health = f2.hit(f1);
+                    if (isWin()) {
+                        break;
+                    }
+                } else {
+                    f1.health = f2.hit(f1);
+                    f2.health = f1.hit(f2);
+                    if (isWin()) {
+                        break;
+                    }
                 }
-                f1.health = f2.hit(f1);
-                if (isWin()) {
-                    break;
-                }
+
                 System.out.print("Health remains: " + f1.name + f1.health + "\n");
                 System.out.print("Health remains: " + f2.name + f2.health + "\n");
                 System.out.print("====================================== \n");
