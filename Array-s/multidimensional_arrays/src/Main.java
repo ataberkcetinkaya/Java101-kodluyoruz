@@ -31,7 +31,7 @@ public class Main {
 
         for (int i = 0; i < siralimatris.length; i++) {
             for (int j = 0; j < siralimatris[i].length; j++) {
-                System.out.println(siralimatris[i][j] + " ");
+                System.out.print(siralimatris[i][j] + " ");
             }
             System.out.println();
         }
