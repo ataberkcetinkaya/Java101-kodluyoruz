@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        //ODEV - DIZIDEKI ELEMANLARI SIRALAMA
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("How many numbers do you want to enter?");
